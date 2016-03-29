@@ -1,6 +1,13 @@
 Conda Buildpack
 ===============
 
+This is a fork of [@kennethreitz's conda-buildpack](https://github.com/kennethreitz/conda-buildpack), which merges in [@move-fast's fork](https://github.com/move-fast/conda-buildpack) that alters the `PYTHONPATH` and removes `pip install` from this buildpack. It's meant to be used in a [multiple buildpack deployment](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app) with the [official python buildpack](https://github.com/heroku/heroku-buildpack-python) and should precede it in buildpack order, e.g.
+
+```
+1. https://github.com/Crowdbooster/conda-buildpack
+2. https://github.com/heroku/heroku-buildpack-python
+```
+
 This is a [Heroku Buildpack](https://devcenter.heroku.com/articles/buildpacks) for [Conda](http://conda.pydata.org/), the Python distribution for scientific computing by Continuum Analytics.
 
 This buildpack enables the installation of binary packages through the
@@ -18,6 +25,7 @@ Like when using the standard buildpack for python from Heroku, you can also
 still supply a `requirements.txt` file for [pip](https://github.com/pypa/pip)
 to process.  In this way, you can install binary packages via conda for
 everything you can and still use pip for anything you can't.
+
 Usage
 -----
 
