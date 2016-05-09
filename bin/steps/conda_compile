@@ -19,4 +19,4 @@ fi
 conda clean -pt --yes > /dev/null
 rm -rf ~/.heroku/miniconda/pkgs
 # Remove mkl since we should be using nomkl
-conda remove mkl mkl-service
+conda remove mkl
