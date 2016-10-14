@@ -13,10 +13,10 @@ conda install nomkl
 
 if [ -f conda-requirements.txt ]; then
     puts-step "Installing dependencies using Conda"
-    conda install --no-deps --file conda-requirements.txt --yes --quiet | indent
+    conda install --file conda-requirements.txt --yes --quiet | indent
 fi
 
 # Clean up the installation environment .
 conda clean -pt --yes > /dev/null
 rm -rf ~/.heroku/miniconda/pkgs
-# Remove mkl since we should be using nomkl
+
