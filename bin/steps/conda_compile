@@ -1,4 +1,4 @@
-CONDA_INSTALLER="Miniconda2-4.2.12-Linux-x86_64.sh"
+CONDA_INSTALLER="Miniconda-latest-Linux-x86_64.sh"
 if [ ! -d /app/.heroku/miniconda ]; then
     puts-step "Preparing Python/Miniconda 4.2.12 Environment"
     curl -Os https://repo.continuum.io/miniconda/$CONDA_INSTALLER
