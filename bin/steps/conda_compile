@@ -17,6 +17,9 @@ if [ -f conda-requirements.txt ]; then
     conda install --file conda-requirements.txt --yes --quiet | indent
 fi
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/.heroku/miniconda/lib
+conda install -f cryptography
+
 # Clean up the installation environment .
 conda clean -pt --yes > /dev/null
 
