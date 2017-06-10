@@ -48,8 +48,8 @@ rm -rf $HOME/.cache
 rm -rf $HOME/.heroku/miniconda/include
 rm -rf $HOME/.heroku/miniconda/pkgs
 
-
-set-env PATH '$MINICONDA_DIR/bin:$PATH'
+echo "Setting environment variables"
+set-env PATH "$MINICONDA_DIR/bin:\$PATH"
 
 # Dir will change based on python version
 PYTHONDIR=`ls -d1 $MINICONDA_DIR/envs/$CONDA_ENV_NAME/lib/*/ | grep -e "python\d\.\d/$"`
