@@ -52,6 +52,10 @@ rm -rf $HOME/.heroku/miniconda/pkgs
 set-env PATH '$MINICONDA_DIR/bin:$PATH'
 
 # Dir will change based on python version
-SITE_PACKAGES_DIR="$(ls -d1 $MINICONDA_DIR/envs/$CONDA_ENV_NAME/lib/*/ | grep -e "python\d\.\d/$")site-packages"
+PYTHONDIR=`ls -d1 $MINICONDA_DIR/envs/$CONDA_ENV_NAME/lib/*/ | grep -e "python\d\.\d/$"`
+echo PYTHONDIR
+SITE_PACKAGES_DIR="$PYTHONDIRsite-packages"
+echo SITE_PACKAGES_DIR
 
-set-default-env PYTHONPATH '$SITE_PACKAGES_DIR:/app/:$PYTHONPATH'
+# Use SITE_PACKAGES_DIR value from here, leave PYTHONPATH for later expanding
+set-default-env PYTHONPATH "$SITE_PACKAGES_DIR:/app/:\$PYTHONPATH"
