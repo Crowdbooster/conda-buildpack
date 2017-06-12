@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
-PYTHON_VERSION=$(cat runtime.txt)
-CONDA_ENV_NAME=$PYTHON_VERSION
-
-
 cat <<EOF
 ---
 config_vars:
-  PATH: /app/.heroku/miniconda/envs/$CONDA_ENV_NAME/bin:/usr/local/bin:/usr/bin:/bin
+  PATH: /app/.heroku/miniconda/envs/$(cat runtime.txt)/bin:/usr/local/bin:/usr/bin:/bin
 EOF
