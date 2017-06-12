@@ -52,9 +52,7 @@ echo "Setting environment variables"
 set-env PATH "$MINICONDA_DIR/bin:\$PATH"
 echo "Setting PYTHONPATH"
 # Dir will change based on python version
-PYTHONDIR=`ls -d1 $MINICONDA_DIR/envs/$CONDA_ENV_NAME/lib/*/ | grep -e "python\d\.\d/$"`
-echo $PYTHONDIR
-SITE_PACKAGES_DIR="$PYTHONDIRsite-packages"
+SITE_PACKAGES_DIR="/app/.heroku/miniconda/envs/$CONDA_ENV_NAME/lib/python$(echo $PYTHON_VERSION_NUMBER | cut -d '.' -f-2)/site-packages"
 echo $SITE_PACKAGES_DIR
 
 # Use SITE_PACKAGES_DIR value from here, leave PYTHONPATH for later expanding
