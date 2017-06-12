@@ -40,6 +40,12 @@ fi
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/.heroku/miniconda/lib
 conda install -f cryptography
+conda install -f pip
+
+source activate $CONDA_ENV_NAME
+echo "Using pip: $(which pip)"
+# Uses conda pip
+pip install -r requirements.txt
 
 # Clean up the installation environment .
 conda clean -pt --yes > /dev/null
