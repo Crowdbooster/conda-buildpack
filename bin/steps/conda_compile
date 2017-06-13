@@ -13,17 +13,21 @@ CONDA_ENV_NAME=$PYTHON_VERSION
 PYTHON_VERSION_NUMBER=`echo $PYTHON_VERSION | cut -d \- -f 2`
 
 CONDA_INSTALLER="Miniconda2-4.3.21-Linux-x86_64.sh"
+
 if [ ! -d /app/.heroku/miniconda ]; then
     puts-step "Preparing Python/Miniconda2 4.3.21 Environment"
     curl -Os https://repo.continuum.io/miniconda/$CONDA_INSTALLER
     bash $CONDA_INSTALLER -p /app/.heroku/miniconda/ -b | indent
     rm -fr $CONDA_INSTALLER 
-
-    conda create -n $CONDA_ENV_NAME --yes python=$PYTHON_VERSION_NUMBER
-    source activate $CONDA_ENV_NAME
-
-    conda install pip --yes | indent
 fi
+
+if conda info --envs | grep -q $CONDA_ENV_NAME; then
+    echo "Conda environment already exists"
+else
+    conda create -n $CONDA_ENV_NAME --yes python=$PYTHON_VERSION_NUMBER
+
+source activate $CONDA_ENV_NAME
+conda install pip --yes | indent
 
 MINICONDA_DIR="/app/.heroku/miniconda"
 
