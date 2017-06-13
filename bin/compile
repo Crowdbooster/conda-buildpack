@@ -90,7 +90,7 @@ set-env PYTHONUNBUFFERED true
 set-default-env LANG en_US.UTF-8
 set-default-env PYTHONHASHSEED random
 CONDA_ENV=$(cat runtime.txt)
-echo -e "\nsource activate $CONDE_ENV" >> $PROFILE_PATH
+echo -e "\nsource activate $CONDA_ENV" >> $PROFILE_PATH
 
 # Experimental post_compile hook.
 # source $BIN_DIR/steps/hooks/post_compile
