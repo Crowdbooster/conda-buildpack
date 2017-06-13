@@ -28,7 +28,7 @@ else
 fi
 
 source activate $CONDA_ENV_NAME
-conda install pip --yes | indent
+conda install pip setuptools --yes | indent
 
 MINICONDA_DIR="/app/.heroku/miniconda"
 
