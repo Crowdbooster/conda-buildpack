@@ -25,6 +25,7 @@ if conda info --envs | grep -q $CONDA_ENV_NAME; then
     echo "Conda environment already exists"
 else
     conda create -n $CONDA_ENV_NAME --yes python=$PYTHON_VERSION_NUMBER
+fi
 
 source activate $CONDA_ENV_NAME
 conda install pip --yes | indent
