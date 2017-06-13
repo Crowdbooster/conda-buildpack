@@ -49,7 +49,7 @@ conda install -f cryptography
 
 source activate $CONDA_ENV_NAME
 
-pip install pip setuptools --upgrade --exists-action=w
+pip install pip setuptools --upgrade --exists-action=w --disable-pip-version-check
 
 # Clean up the installation environment .
 conda clean -pt --yes > /dev/null
