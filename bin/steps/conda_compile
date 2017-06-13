@@ -59,5 +59,3 @@ PYTHON_PACKAGES_DIR="/app/.heroku/miniconda/envs/$CONDA_ENV_NAME/lib/python$(ech
 
 # Use SITE_PACKAGES_DIR value from here, leave PYTHONPATH for later expanding
 set-default-env PYTHONPATH "$PYTHON_PACKAGES_DIR:$PYTHON_PACKAGES_DIR/site-packages:/app/:\$PYTHONPATH"
-
-echo -e "\nsource activate $CONDA_ENV_NAME" >> /app/.profile.d/miniconda.sh
