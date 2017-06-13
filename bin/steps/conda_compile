@@ -51,8 +51,5 @@ rm -rf $HOME/.cache
 rm -rf $HOME/.heroku/miniconda/include
 rm -rf $HOME/.heroku/miniconda/pkgs
 
-echo "Setting environment variables"
 set-env PATH "$MINICONDA_DIR/bin:\$PATH"
-echo "Setting PYTHONPATH"
-
 set-default-env PYTHONPATH "/app/:\$PYTHONPATH"
