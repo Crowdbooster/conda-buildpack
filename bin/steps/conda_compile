@@ -28,8 +28,7 @@ else
 fi
 
 source activate $CONDA_ENV_NAME
-conda install pip setuptools --yes | indent
-conda update pip setuptools --yes | indent
+conda install pip --yes | indent
 
 MINICONDA_DIR="/app/.heroku/miniconda"
 
@@ -48,8 +47,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/.heroku/miniconda/lib
 conda install -f cryptography
 
 source activate $CONDA_ENV_NAME
-
-pip install pip setuptools --upgrade --exists-action=w --disable-pip-version-check
 
 # Clean up the installation environment .
 conda clean -pt --yes > /dev/null
