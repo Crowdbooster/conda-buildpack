@@ -12,10 +12,10 @@ CONDA_ENV_NAME=$PYTHON_VERSION
 # E.g. `3.6.1`
 PYTHON_VERSION_NUMBER=`echo $PYTHON_VERSION | cut -d \- -f 2`
 
-CONDA_INSTALLER="Miniconda2-4.3.21-Linux-x86_64.sh"
+CONDA_INSTALLER="Miniconda2-4.4.10-Linux-x86_64.sh"
 
 if [ ! -d /app/.heroku/miniconda ]; then
-    puts-step "Preparing Python/Miniconda2 4.3.21 Environment"
+    puts-step "Preparing Python/Miniconda2 4.4.10 Environment"
     curl -Os https://repo.continuum.io/miniconda/$CONDA_INSTALLER
     bash $CONDA_INSTALLER -p /app/.heroku/miniconda/ -b | indent
     rm -fr $CONDA_INSTALLER 
