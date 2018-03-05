@@ -4,7 +4,7 @@ Conda Buildpack
 This is a fork of [@kennethreitz's conda-buildpack](https://github.com/kennethreitz/conda-buildpack), which merges in [@move-fast's fork](https://github.com/move-fast/conda-buildpack) that alters the `PYTHONPATH` and removes `pip install` from this buildpack. It's meant to be used in a [multiple buildpack deployment](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app) with the [official python buildpack](https://github.com/heroku/heroku-buildpack-python) and should precede it in buildpack order, e.g.
 
 ```
-1. https://github.com/PRXco/conda-buildpack
+1. https://github.com/UpbeatPR/conda-buildpack
 2. https://github.com/heroku/heroku-buildpack-python
 ```
 
