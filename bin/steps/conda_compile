@@ -36,7 +36,6 @@ MINICONDA_DIR="/app/.heroku/miniconda"
 echo "nomkl" > $HOME/.heroku/miniconda/conda-meta/pinned
 echo "added pinned file in $HOME/.heroku/miniconda/conda-meta/pinned"
 conda install nomkl
-conda remove mkl mkl-service
 
 if [ -f conda-requirements.txt ]; then
     puts-step "Installing dependencies using Conda"
@@ -52,6 +51,7 @@ source activate $CONDA_ENV_NAME
 # Clean up the installation environment .
 conda clean -pt --yes > /dev/null
 
+conda remove mkl mkl-service
 rm -rf $HOME/.cache
 rm -rf $HOME/.heroku/miniconda/include
 rm -rf $HOME/.heroku/miniconda/pkgs
